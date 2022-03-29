@@ -37,6 +37,10 @@
             this.buttonGenerate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSaveInDB = new System.Windows.Forms.Button();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxSets = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureInitialSegments = new System.Windows.Forms.PictureBox();
@@ -45,6 +49,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInitialSegments)).BeginInit();
@@ -72,12 +77,13 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 587);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
@@ -95,19 +101,19 @@
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 6;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.Size = new System.Drawing.Size(194, 287);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // textBoxNameSet
             // 
             this.textBoxNameSet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxNameSet.Location = new System.Drawing.Point(3, 191);
+            this.textBoxNameSet.Location = new System.Drawing.Point(3, 224);
             this.textBoxNameSet.Name = "textBoxNameSet";
             this.textBoxNameSet.Size = new System.Drawing.Size(188, 23);
             this.textBoxNameSet.TabIndex = 6;
@@ -116,7 +122,7 @@
             // 
             this.labelNumberOfSegments.AutoSize = true;
             this.labelNumberOfSegments.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelNumberOfSegments.Location = new System.Drawing.Point(3, 17);
+            this.labelNumberOfSegments.Location = new System.Drawing.Point(3, 48);
             this.labelNumberOfSegments.Name = "labelNumberOfSegments";
             this.labelNumberOfSegments.Size = new System.Drawing.Size(188, 30);
             this.labelNumberOfSegments.TabIndex = 5;
@@ -125,17 +131,17 @@
             // textBoxNumberOfSegments
             // 
             this.textBoxNumberOfSegments.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxNumberOfSegments.Location = new System.Drawing.Point(3, 50);
+            this.textBoxNumberOfSegments.Location = new System.Drawing.Point(3, 81);
             this.textBoxNumberOfSegments.Name = "textBoxNumberOfSegments";
             this.textBoxNumberOfSegments.Size = new System.Drawing.Size(188, 23);
             this.textBoxNumberOfSegments.TabIndex = 1;
             // 
             // buttonGenerate
             // 
-            this.buttonGenerate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonGenerate.Location = new System.Drawing.Point(3, 97);
+            this.buttonGenerate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGenerate.Location = new System.Drawing.Point(3, 110);
             this.buttonGenerate.Name = "buttonGenerate";
-            this.buttonGenerate.Size = new System.Drawing.Size(188, 41);
+            this.buttonGenerate.Size = new System.Drawing.Size(188, 30);
             this.buttonGenerate.TabIndex = 3;
             this.buttonGenerate.Text = "Создать новый набор";
             this.buttonGenerate.UseVisualStyleBackColor = true;
@@ -145,7 +151,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Location = new System.Drawing.Point(3, 158);
+            this.label1.Location = new System.Drawing.Point(3, 191);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(188, 30);
             this.label1.TabIndex = 6;
@@ -153,14 +159,63 @@
             // 
             // buttonSaveInDB
             // 
-            this.buttonSaveInDB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSaveInDB.Location = new System.Drawing.Point(3, 238);
+            this.buttonSaveInDB.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonSaveInDB.Location = new System.Drawing.Point(3, 253);
             this.buttonSaveInDB.Name = "buttonSaveInDB";
-            this.buttonSaveInDB.Size = new System.Drawing.Size(188, 46);
+            this.buttonSaveInDB.Size = new System.Drawing.Size(188, 30);
             this.buttonSaveInDB.TabIndex = 4;
-            this.buttonSaveInDB.Text = "Сохранить данные в базу данных";
+            this.buttonSaveInDB.Text = "Сохранить набор в базу данных";
             this.buttonSaveInDB.UseVisualStyleBackColor = true;
             this.buttonSaveInDB.Click += new System.EventHandler(this.buttonSaveInDB_Click);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxSets, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.button1, 0, 2);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 296);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 4;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(194, 288);
+            this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label2.Location = new System.Drawing.Point(3, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(188, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Загрузка набора из базы данных";
+            // 
+            // comboBoxSets
+            // 
+            this.comboBoxSets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxSets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSets.FormattingEnabled = true;
+            this.comboBoxSets.Location = new System.Drawing.Point(3, 77);
+            this.comboBoxSets.Name = "comboBoxSets";
+            this.comboBoxSets.Size = new System.Drawing.Size(188, 23);
+            this.comboBoxSets.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(3, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(188, 30);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Загрузить набор";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabControl1
             // 
@@ -223,11 +278,12 @@
             this.ClientSize = new System.Drawing.Size(1682, 593);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureInitialSegments)).EndInit();
@@ -253,5 +309,9 @@
         private TextBox textBoxNameSet;
         private TableLayoutPanel tableLayoutPanel3;
         private Label label1;
+        private TableLayoutPanel tableLayoutPanel4;
+        private Label label2;
+        private ComboBox comboBoxSets;
+        private Button button1;
     }
 }

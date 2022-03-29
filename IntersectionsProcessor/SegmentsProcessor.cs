@@ -10,7 +10,7 @@ namespace IntersectionsProcessor
     internal class SegmentsProcessor
     {
         //Список с изначальными отрезками
-        public List<Segment> initialSegments { get; }
+        public List<Segment> initialSegments { get; set; }
         //Список с отрезками, которые получились в результате деления других отрезков
         public List<Segment> terminalSegments { get; set; }
 
@@ -34,7 +34,7 @@ namespace IntersectionsProcessor
 
             for (int i = 0; i < numberOfSegments; i++)
             {
-                newSegment = new Segment(random.Next(0, 1200), random.Next(0, 1200), random.Next(0, 900), random.Next(0, 900));
+                newSegment = new Segment(random.Next(1, 1200), random.Next(1, 1200), random.Next(1, 900), random.Next(1, 900));
  
                 newSegment.IsSplitted = false;
                 initialSegments.Add(newSegment);

@@ -33,6 +33,17 @@ namespace IntersectionsProcessor
             IsSplitted = false;
         }
 
+        public Segment(int X1, int X2, int Y1, int Y2, bool isSplitted)
+        {
+            P1 = new Point(X1, Y1);
+            P2 = new Point(X2, Y2);
+
+            K = (double)(Y2 - Y1) / (X2 - X1);
+            D = (double)(X2 * Y1 - X1 * Y2) / (X2 - X1);
+
+            IsSplitted = isSplitted;
+        }
+
         public override bool Equals(object obj)
         {
             if (obj == null)

@@ -11,6 +11,7 @@
             db = new Models.SegmentsDBContext();
             segmentsProcessor = new SegmentsProcessor();
             WindowState = FormWindowState.Maximized;
+            LoadSets();
         }
 
         //Метод обрабатывает событие нажатия на кнопку "Создать новый набор"
@@ -94,7 +95,59 @@
                 db.SaveChanges();
             }
 
+            LoadSets();
             MessageBox.Show("Данные успешно сохранены", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        //Метод извлекает список наборов из базы данных
+        private void LoadSets()
+        {
+            var sets = db.Sets.ToList();
+            comboBoxSets.Items.Clear();
+
+            if (sets.Count > 0)
+            {
+                foreach (Models.Set set in sets)
+                    comboBoxSets.Items.Add(set.Id + ". " + set.Name);
+                comboBoxSets.SelectedIndex = 0;
+            }
+
+        }
+
+        //Метод извлекает отрезки и их пересечения из базы данных
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (comboBoxSets.Text.Trim() == String.Empty)
+                return;
+
+            //Получение id набора и загрузка данных из базы данных
+            int id = int.Parse(comboBoxSets.Text.Substring(0, comboBoxSets.Text.IndexOf('.')));
+            var set = db.Sets.Find(id);
+            db.Entry(set).Collection(i => i.Segments).Load();
+            db.Entry(set).Collection(i => i.Intersections).Load();
+
+            List<Segment> initialSegments = new List<Segment>();
+            List<Segment> terminalSegments = new List<Segment>();
+
+            Segment newSegment;
+            foreach(var s in set.Segments)
+            {
+                newSegment = new Segment(s.StartX, s.EndX, s.StartY, s.EndY, s.IsSplitted);
+                initialSegments.Add(newSegment);
+            }
+
+            foreach (var s in set.Intersections)
+            {
+                newSegment = new Segment(s.StartX, s.EndX, s.StartY, s.EndY);
+                terminalSegments.Add(newSegment);
+            }
+
+            segmentsProcessor.initialSegments = initialSegments;
+            segmentsProcessor.terminalSegments = terminalSegments;
+            textBoxNumberOfSegments.Text = initialSegments.Count.ToString();
+
+            pictureInitialSegments.Invalidate();
+            pictureSplittedSegments.Invalidate();
         }
     }
 }
